@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>N Viswanatha Reddy | Senior DevOps Engineer</title>
+<meta name="description" content="N Viswanatha Reddy is a Senior DevOps Engineer specializing in GitHub Enterprise, CI/CD, Kubernetes, Terraform, AWS, Azure, and platform automation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0c0f14;
+    --bg-elevated: #11151c;
+    --bg-card: #161b23;
+    --border: #232a35;
+    --border-bright: #323b49;
+    --text: #e7e9ed;
+    --text-dim: #9aa3b1;
+    --text-faint: #626b7a;
+    --accent-1: #6ee7c8;
+    --accent-2: #7aa2ff;
+    --gradient: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+    --display: 'Space Grotesk', sans-serif;
+    --sans: 'Inter', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 3px; }
+  .grad-text { background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  /* ── NAV ───────────────────────────────────────────── */
+  nav { position: sticky; top: 0; z-index: 50; background: rgba(12, 15, 20, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 66px; }
+  .nav-logo { font-family: var(--display); font-weight: 700; font-size: 16px; display: flex; align-items: center; gap: 10px; }
+  .nav-logo .badge { width: 30px; height: 30px; border-radius: 8px; background: var(--gradient); display: flex; align-items: center; justify-content: center; color: #0c0f14; font-size: 12px; font-weight: 700; }
+  .nav-links { display: none; gap: 26px; font-size: 14px; color: var(--text-dim); }
+  .nav-links a:hover { color: var(--accent-1); }
+  @media (min-width: 760px) { .nav-links { display: flex; } }
+  .nav-cta { font-size: 13px; font-weight: 600; color: #0c0f14; background: var(--gradient); padding: 9px 18px; border-radius: 100px; }
+
+  /* ── HERO ──────────────────────────────────────────── */
+  header.hero { padding: 90px 0 70px; position: relative; overflow: hidden; }
+  header.hero::before {
+    content: ""; position: absolute; top: -180px; right: -160px; width: 480px; height: 480px;
+    background: radial-gradient(circle, rgba(110,231,200,0.10), transparent 70%); pointer-events: none;
+  }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--accent-1); background: rgba(110,231,200,0.08); border: 1px solid rgba(110,231,200,0.25); padding: 7px 14px; border-radius: 100px; margin-bottom: 28px; }
+  .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-1); }
+  .hero-greet { font-size: 16px; color: var(--text-dim); margin-bottom: 10px; }
+  h1 { font-family: var(--display); font-size: clamp(38px, 6vw, 58px); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 10px; }
+  .hero-role { font-family: var(--display); font-size: clamp(20px, 3vw, 26px); font-weight: 600; color: var(--text-dim); margin-bottom: 28px; }
+  .hero-sub { font-size: 17px; color: var(--text-dim); max-width: 600px; margin-bottom: 36px; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { font-size: 14px; font-weight: 600; padding: 12px 24px; border-radius: 100px; border: 1px solid var(--border-bright); display: inline-flex; align-items: center; gap: 8px; transition: all 0.15s ease; }
+  .btn-primary { background: var(--gradient); color: #0c0f14; border: none; }
+  .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+  .btn-ghost { color: var(--text); background: var(--bg-card); }
+  .btn-ghost:hover { border-color: var(--accent-1); color: var(--accent-1); }
+
+  /* ── SECTION SHARED ───────────────────────────────── */
+  section { padding: 72px 0; border-top: 1px solid var(--border); }
+  .eyebrow-sm { font-size: 13px; font-weight: 600; color: var(--accent-1); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+  .section-title { font-family: var(--display); font-size: clamp(26px, 4vw, 36px); font-weight: 700; margin-bottom: 14px; letter-spacing: -0.01em; line-height: 1.2; }
+  .section-intro { color: var(--text-dim); max-width: 560px; margin-bottom: 44px; font-size: 16px; }
+
+  /* ── ABOUT ─────────────────────────────────────────── */
+  .about-grid { display: grid; grid-template-columns: 280px 1fr; gap: 40px; align-items: start; }
+  @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; } }
+  .about-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; padding: 28px; text-align: center; position: sticky; top: 90px; }
+  .about-photo { width: 120px; height: 120px; border-radius: 50%; background: var(--gradient); margin: 0 auto 18px; display: flex; align-items: center; justify-content: center; font-family: var(--display); font-size: 30px; font-weight: 700; color: #0c0f14; overflow: hidden; }
+  .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .about-card-name { font-family: var(--display); font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+  .about-card-role { font-size: 13px; color: var(--text-dim); margin-bottom: 4px; }
+  .about-card-loc { font-size: 13px; color: var(--text-faint); margin-bottom: 20px; }
+  .about-card-links { display: flex; flex-direction: column; gap: 10px; text-align: left; }
+  .about-card-links a { font-size: 13px; color: var(--text-dim); display: flex; align-items: center; gap: 8px; padding: 9px 12px; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; }
+  .about-card-links a:hover { border-color: var(--accent-1); color: var(--accent-1); }
+
+  .about-text h3 { font-family: var(--display); font-size: 18px; font-weight: 700; margin-bottom: 14px; color: var(--accent-1); }
+  .about-text p { color: var(--text-dim); font-size: 16px; margin-bottom: 20px; }
+  .about-text strong { color: var(--text); font-weight: 600; }
+
+  /* ── SKILLS — tools grid ───────────────────────────── */
+  .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+  .tool-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; transition: border-color 0.2s ease; }
+  .tool-card:hover { border-color: var(--border-bright); }
+  .tool-card-title { font-family: var(--display); font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+  .tool-card-desc { font-size: 13px; color: var(--text-faint); margin-bottom: 16px; min-height: 36px; }
+  .tool-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+  .tool-tag { font-size: 11.5px; color: var(--text-dim); background: var(--bg); border: 1px solid var(--border); padding: 4px 10px; border-radius: 100px; }
+
+  /* ── EXPERIENCE ────────────────────────────────────── */
+  .exp-item { display: grid; grid-template-columns: 90px 1fr; gap: 24px; padding: 32px 0; border-bottom: 1px solid var(--border); }
+  .exp-item:first-child { padding-top: 0; }
+  .exp-item:last-child { border-bottom: none; }
+  @media (max-width: 600px) { .exp-item { grid-template-columns: 1fr; gap: 8px; } }
+  .exp-year { font-family: var(--display); font-size: 13px; font-weight: 700; color: var(--accent-1); padding-top: 4px; }
+  .exp-role { font-family: var(--display); font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+  .exp-company { font-size: 14px; color: var(--text-dim); margin-bottom: 14px; font-weight: 600; }
+  .exp-desc { font-size: 14px; color: var(--text-dim); margin-bottom: 18px; }
+  .exp-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .exp-tag { font-size: 11.5px; color: var(--accent-1); background: rgba(110,231,200,0.08); border: 1px solid rgba(110,231,200,0.2); padding: 5px 11px; border-radius: 100px; }
+  .exp-items { list-style: none; margin-top: 14px; }
+  .exp-items li { font-size: 14px; color: var(--text-dim); padding-left: 18px; position: relative; margin-bottom: 8px; }
+  .exp-items li::before { content: "→"; position: absolute; left: 0; color: var(--accent-1); }
+
+  /* ── PROJECTS ──────────────────────────────────────── */
+  .project-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; padding: 32px; margin-bottom: 20px; }
+  .project-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 14px; flex-wrap: wrap; }
+  .project-name { font-family: var(--display); font-size: 21px; font-weight: 700; }
+  .project-status { font-size: 12px; font-weight: 600; color: var(--accent-1); background: rgba(110,231,200,0.1); border: 1px solid rgba(110,231,200,0.25); padding: 5px 13px; border-radius: 100px; white-space: nowrap; }
+  .project-status.pending { color: var(--text-faint); background: transparent; border-color: var(--border-bright); }
+  .project-desc { font-size: 15px; color: var(--text-dim); margin-bottom: 20px; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .tag { font-size: 12px; color: var(--text-faint); border: 1px solid var(--border-bright); padding: 5px 12px; border-radius: 100px; }
+  .project-links a { font-size: 14px; font-weight: 600; color: var(--accent-2); }
+  .project-links a:hover { text-decoration: underline; }
+
+  /* ── CREDENTIAL CARDS (certs/awards/volunteer/speaking) ── */
+  .cred-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+  .cred-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 22px; }
+  .cred-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .cred-year { font-family: var(--display); font-size: 13px; font-weight: 700; color: var(--accent-1); background: rgba(110,231,200,0.1); padding: 4px 10px; border-radius: 6px; }
+  .cred-verified { font-size: 11px; color: var(--text-faint); display: flex; align-items: center; gap: 5px; }
+  .cred-verified::before { content: "●"; color: var(--accent-1); font-size: 8px; }
+  .cred-card-title { font-family: var(--display); font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .cred-card-org { font-size: 13px; color: var(--text-dim); margin-bottom: 14px; }
+  .cred-card-link { font-size: 13px; font-weight: 600; color: var(--accent-2); display: inline-flex; align-items: center; gap: 6px; }
+  .cred-card-link:hover { text-decoration: underline; }
+
+  /* ── EDUCATION ─────────────────────────────────────── */
+  .edu-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; padding: 32px; margin-bottom: 16px; }
+  .edu-degree { font-family: var(--display); font-size: 19px; font-weight: 700; margin-bottom: 6px; }
+  .edu-field { font-size: 14px; color: var(--accent-1); font-weight: 600; margin-bottom: 10px; }
+  .edu-school { font-size: 14px; color: var(--text-dim); margin-bottom: 6px; }
+  .edu-time { font-size: 13px; color: var(--text-faint); }
+
+  /* ── CONTACT / FOOTER ──────────────────────────────── */
+  footer { padding: 80px 0 48px; }
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 44px; margin-bottom: 60px; }
+  .contact-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 26px; text-align: center; }
+  .contact-card-label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
+  .contact-card-action { font-size: 14px; font-weight: 600; color: var(--accent-2); }
+  .footer-bottom { font-size: 13px; color: var(--text-faint); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 28px; border-top: 1px solid var(--border); }
+
+  @media (max-width: 640px) {
+    header.hero { padding: 64px 0 48px; }
+    .footer-bottom { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-logo"><span class="badge">NVR</span> N Viswanatha Reddy</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
+    </div>
+    <a class="nav-cta" href="mailto:visu1053@gmail.com">Get in touch</a>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="wrap">
+    <div class="eyebrow"><span class="dot"></span> Open to Senior DevOps &amp; Platform opportunities</div>
+    <div class="hero-greet">Hello, I'm</div>
+    <h1>N Viswanatha <span class="grad-text">Reddy</span></h1>
+    <div class="hero-role">Senior DevOps Engineer · Platform Engineering</div>
+    <p class="hero-sub">I build cloud-native platforms and delivery systems that help engineering teams ship with confidence. 12 years in IT, 8+ years in DevOps, and a track record of making large-scale migration measurable.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#contact">Let's Connect →</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/n-viswanatha-reddy-38aa02105/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow-sm">About Me</div>
+    <h2 class="section-title">Engineering leverage at <span class="grad-text">enterprise scale</span></h2>
+    <p class="section-intro">12 years in IT and 8+ years in DevOps, turning complex delivery and infrastructure problems into repeatable systems.</p>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="about-photo" id="about-photo-slot"><img src="viswa.png" alt="N Viswanatha Reddy"></div>
+        <div class="about-card-name">N Viswanatha Reddy</div>
+        <div class="about-card-role">Senior DevOps Engineer</div>
+        <div class="about-card-loc">Bangalore, India</div>
+        <div class="about-card-links">
+          <a href="mailto:visu1053@gmail.com">✉ visu1053@gmail.com</a>
+          <a href="https://www.linkedin.com/in/n-viswanatha-reddy-38aa02105/" target="_blank" rel="noopener">in LinkedIn</a>
+          <a href="#projects">↗ Selected impact</a>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <h3>Senior DevOps Engineer</h3>
+        <p>Over 12 years in IT, including 8+ years in DevOps, I have worked at the point where software delivery, cloud infrastructure, and operational reliability meet. I enjoy taking complex engineering environments and turning them into dependable platforms that teams can use with confidence. My experience spans <strong>AWS</strong>, <strong>Azure</strong>, <strong>GitHub Enterprise</strong>, <strong>Kubernetes</strong>, and Infrastructure as Code.</p>
+        <p>What I enjoy most about DevOps is solving problems that affect the whole delivery journey. I have led the migration of 5,000 repositories and 500+ pipelines, built reusable GitHub Actions and self-service infrastructure, and created automation that saved approximately 900 hours while reducing a 500-day delivery effort to 150 days. I focus on making delivery more consistent, repeatable, and easier for engineering teams to operate.</p>
+        <p>My current work also brings AI into practical engineering workflows. I build approved-LLM, Agentic AI, and RAG solutions with <strong>LangChain</strong> and <strong>LangGraph</strong> for source-code migration, repository onboarding, CI/CD modernization, validation, and documentation. Alongside this, I work with Terraform, Bicep, ARM, CloudFormation, Jenkins, Azure Pipelines, Python, Bash, and PowerShell to automate the work that should not need to remain manual.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="eyebrow-sm">Technical Expertise</div>
+    <h2 class="section-title">Tools & <span class="grad-text">technologies</span></h2>
+    <p class="section-intro">The stack I use to build and operate infrastructure day to day.</p>
+
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-card-title">Amazon Web Services</div>
+        <div class="tool-card-desc">Cloud infrastructure, container orchestration, and serverless compute at production scale.</div>
+        <div class="tool-tags">
+          <span class="tool-tag">EC2</span><span class="tool-tag">ECS/Fargate</span><span class="tool-tag">EKS</span><span class="tool-tag">RDS</span><span class="tool-tag">S3</span><span class="tool-tag">IAM</span><span class="tool-tag">Route53</span><span class="tool-tag">DynamoDB</span>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-title">Microsoft Azure</div>
+        <div class="tool-card-desc">Cloud platform experience across compute, DevOps, and identity services.</div>
+        <div class="tool-tags">
+          <span class="tool-tag">Azure DevOps</span><span class="tool-tag">Azure VMs</span><span class="tool-tag">Azure AD</span>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-title">CI/CD</div>
+        <div class="tool-card-desc">Pipeline design, automation, and multi-environment deployment across tools.</div>
+        <div class="tool-tags">
+          <span class="tool-tag">GitHub Actions</span><span class="tool-tag">Jenkins</span><span class="tool-tag">AWS CodePipeline</span><span class="tool-tag">Azure DevOps</span><span class="tool-tag">Pipeline as Code</span>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-title">Version Control</div>
+        <div class="tool-card-desc">Advanced Git workflows and collaborative development practices.</div>
+        <div class="tool-tags">
+          <span class="tool-tag">Git</span><span class="tool-tag">GitHub Enterprise</span><span class="tool-tag">Branch Protection</span><span class="tool-tag">Code Review</span>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-title">Docker & Containerization</div>
+        <div class="tool-card-desc">Multi-stage builds, image optimization, and container security practices.</div>
+        <div class="tool-tags">
+          <span class="tool-tag">Docker</span><span class="tool-tag">Multi-stage Builds</span><span class="tool-tag">Amazon ECR</span>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-title">Kubernetes & Orchestration</div>
+        <div class="tool-card-desc">Production-grade cluster management, scaling, and deployment strategy.</div>
+        <div class="tool-tags">
+          <span class="tool-tag">EKS</span><span class="tool-tag">Helm Charts</span><span class="tool-tag">HPA</span><span class="tool-tag">Auto-scaling</span>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-title">Infrastructure as Code</div>
+        <div class="tool-card-desc">Automated, repeatable infrastructure provisioning across environments.</div>
+        <div class="tool-tags">
+          <span class="tool-tag">Terraform</span><span class="tool-tag">Bicep</span><span class="tool-tag">ARM</span><span class="tool-tag">CloudFormation</span>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-title">Monitoring & Observability</div>
+        <div class="tool-card-desc">Metrics, dashboards, and alerting for production systems.</div>
+        <div class="tool-tags">
+          <span class="tool-tag">Prometheus</span><span class="tool-tag">Grafana</span><span class="tool-tag">CloudWatch</span><span class="tool-tag">Datadog</span>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-title">AI & Agentic Tooling</div>
+        <div class="tool-card-desc">Building AI agents that automate engineering workflows end to end.</div>
+        <div class="tool-tags">
+          <span class="tool-tag">Anthropic Claude API</span><span class="tool-tag">LangGraph</span><span class="tool-tag">Amazon Q</span><span class="tool-tag">GitHub Copilot</span>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-title">Automation & Scripting</div>
+        <div class="tool-card-desc">Infrastructure automation and process orchestration through code.</div>
+        <div class="tool-tags">
+          <span class="tool-tag">Python</span><span class="tool-tag">Bash</span><span class="tool-tag">YAML</span><span class="tool-tag">Boto3</span>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-title">Systems & Platforms</div>
+        <div class="tool-card-desc">Underlying systems administration and virtualization experience.</div>
+        <div class="tool-tags">
+          <span class="tool-tag">Linux (Ubuntu)</span><span class="tool-tag">VMware</span>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-title">Collaboration Tools</div>
+        <div class="tool-card-desc">Project tracking and team workflow tools.</div>
+        <div class="tool-tags">
+          <span class="tool-tag">JIRA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="eyebrow-sm">Work Experience</div>
+    <h2 class="section-title">Building infrastructure, <span class="grad-text">one deployment at a time</span></h2>
+    <p class="section-intro">Enterprise DevOps, platform modernization, and migration programs that turn delivery friction into measurable capacity.</p>
+
+    <div class="exp-item">
+      <div class="exp-year">2018<br>—<br>Now</div>
+      <div>
+        <div class="exp-role">Senior DevOps Engineer</div>
+        <div class="exp-company">Thomson Reuters · Bangalore, India</div>
+        <p class="exp-desc">Leading enterprise DevOps across AWS and Azure, standardizing CI/CD, Infrastructure as Code, GitHub Enterprise governance, and Kubernetes platform delivery.</p>
+        <ul class="exp-items">
+          <li>Delivered FedRAMP, Data Center Exit, Colo Exit, and Apigee X on GCP initiatives in partnership with infrastructure, application, security, and architecture teams.</li>
+          <li>Led migration of 5,000 repositories and 500+ pipelines from TFS, CVS, SVN, Bitbucket, and Azure Repos to GitHub Enterprise, saving approximately 900 hours and reducing delivery from 500 days to 150 days.</li>
+          <li>Defined repository models, naming and governance standards, branch protection, access controls, and code ownership; served as the GitHub Enterprise SME for adoption and platform enablement.</li>
+          <li>Built an automated GitHub Actions migration tool with repository provisioning, history preservation, and validation, resolving RPC size limits and Git LFS handling for large binaries.</li>
+          <li>Designed end-to-end GitHub Actions workflows for build, test, security scanning, artifact publishing, infrastructure validation, provisioning, and deployment; created reusable and composite actions for self-service onboarding.</li>
+          <li>Modernized Azure infrastructure by migrating ARM templates to Bicep and created reusable Terraform, Bicep, ARM, and CloudFormation modules for repeatable AWS and Azure delivery.</li>
+          <li>Led the Jenkins to GitHub Actions migration for 15+ microservices under Check Point Edge, improving deployment reliability and reducing pipeline complexity.</li>
+          <li>Deployed and supported Kubernetes platforms across development, staging, and production using Helm, environment-specific configuration, HPA, resource-based scaling, rolling updates, and kubectl troubleshooting.</li>
+          <li>Configured pod scheduling, node placement, resource requests and limits, readiness and liveness probes, and rollout strategies to improve workload stability and cluster efficiency.</li>
+          <li>Configured Ingress, services, and load balancing for application traffic, troubleshooting CrashLoopBackOff, pending pods, image-pull failures, networking issues, and resource constraints.</li>
+          <li>Monitored cluster and workload health, tuned autoscaling thresholds, and supported capacity planning for variable workloads while maintaining application availability.</li>
+          <li>Developed operational automation with Python, Bash, and PowerShell, and contributed to self-service infrastructure initiatives that improved developer experience and deployment velocity.</li>
+          <li>Built approved-LLM, Agentic AI, and RAG solutions with LangChain, LangGraph, and vector databases for source-code migration, repository onboarding, CI/CD modernization, validation, and documentation generation.</li>
+          <li>Mentored junior engineers, led Snack &amp; Learn sessions, and partnered with application and architecture teams on Kubernetes standards, operational readiness, cloud adoption, and platform scalability.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">AWS</span><span class="exp-tag">Kubernetes</span><span class="exp-tag">Terraform</span><span class="exp-tag">GitHub Actions</span><span class="exp-tag">AI Agents</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-year">2014<br>—<br>2018</div>
+      <div>
+        <div class="exp-role">Database Engineer</div>
+        <div class="exp-company">Thomson Reuters · Bangalore, India</div>
+        <p class="exp-desc">Administered enterprise database platforms and the underlying Linux and Windows environments, with a focus on reliability, automation, and operational readiness.</p>
+        <ul class="exp-items">
+          <li>Provisioned and administered MSSQL standalone and clustered environments, plus Oracle 11g and 12c on Windows, Linux, and Solaris.</li>
+          <li>Designed backup strategies and scheduled automated maintenance jobs for environment readiness and reliability.</li>
+          <li>Configured Oracle RAC startup, shutdown, and monitoring; managed users and privileges through DBCA and set up database links.</li>
+          <li>Managed NAS storage mounts and Linux file permissions while troubleshooting login, network, and access issues.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">MSSQL</span><span class="exp-tag">Oracle RAC</span><span class="exp-tag">Linux</span><span class="exp-tag">Solaris</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="eyebrow-sm">Projects</div>
+    <h2 class="section-title">Things I've <span class="grad-text">built</span></h2>
+    <p class="section-intro">Selected programs where platform engineering, automation, and AI created concrete delivery leverage.</p>
+
+    <div class="project-card">
+      <div class="project-top">
+        <div class="project-name">GitHub Enterprise Migration &amp; Platform Ownership</div>
+        <div class="project-status">5,000 repos</div>
+      </div>
+      <p class="project-desc">Led the enterprise-wide migration from TFS, CVS, SVN, Bitbucket, and Azure Repos to a governed GitHub Enterprise platform. Defined repository models, naming standards, branch protection, access controls, and code ownership. Built GitHub Actions automation for repository provisioning, history preservation, and validation, solving RPC limits and Git LFS handling for large binaries. This enabled repeatable migration at scale with minimal manual effort and served as the foundation for enterprise GitHub adoption.</p>
+      <div class="project-tags">
+        <span class="tag">GitHub Enterprise</span><span class="tag">GitHub Actions</span><span class="tag">Git LFS</span><span class="tag">TFS</span><span class="tag">SVN</span><span class="tag">PowerShell</span><span class="tag">Bash</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <div class="project-name">Enterprise CI/CD Modernization</div>
+        <div class="project-status">500+ pipelines</div>
+      </div>
+      <p class="project-desc">Modernized enterprise CI/CD by migrating pipelines from Jenkins and Azure Pipelines to GitHub Actions across product teams. Designed secure workflows for build, test, security scanning, artifact publishing, and deployment across AWS and Azure. Built reusable and composite actions to remove duplicated logic, accelerate service onboarding, and enforce consistent standards. Integrated Terraform, Bicep, ARM, and CloudFormation for infrastructure validation and provisioning, with automated quality and security gates for reliable self-service delivery.</p>
+      <div class="project-tags">
+        <span class="tag">GitHub Actions</span><span class="tag">Jenkins</span><span class="tag">Azure Pipelines</span><span class="tag">Terraform</span><span class="tag">Bicep</span><span class="tag">ARM</span><span class="tag">CloudFormation</span><span class="tag">Docker</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <div class="project-name">Kubernetes Platform Enablement</div>
+        <div class="project-status">EKS / AKS</div>
+      </div>
+      <p class="project-desc">Deployed and operated Kubernetes platforms for containerized workloads across development, staging, and production. Standardized Helm templates and environment-specific configuration, implemented HPA and resource-based scaling, and configured pod scheduling, node placement, requests, limits, probes, and rolling updates for stable operations. Configured Ingress, services, and load balancing, monitored cluster health, tuned capacity for variable workloads, and used kubectl to troubleshoot pending pods, CrashLoopBackOff, image-pull, networking, scaling, and availability issues in partnership with application and architecture teams.</p>
+      <div class="project-tags">
+        <span class="tag">Kubernetes</span><span class="tag">Docker</span><span class="tag">Helm</span><span class="tag">kubectl</span><span class="tag">HPA</span><span class="tag">Ingress</span><span class="tag">Load Balancing</span><span class="tag">EKS</span><span class="tag">AKS</span><span class="tag">Terraform</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <div class="project-name">AI/LLM &amp; Agentic AI Automation</div>
+        <div class="project-status">Enterprise</div>
+      </div>
+      <p class="project-desc">Contributed to enterprise AI initiatives by onboarding approved Large Language Models and building engineering automation that combines DevOps practices with Generative AI. Designed Agentic AI agents and Retrieval-Augmented Generation pipelines with LangChain, LangGraph, and vector databases for source-code migration, repository onboarding, CI/CD modernization, validation, and documentation generation. Kept automation aligned with enterprise security and compliance while identifying high-value use cases with engineering teams.</p>
+      <div class="project-tags">
+        <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">LangGraph</span><span class="tag">LLMs</span><span class="tag">RAG</span><span class="tag">Vector Databases</span><span class="tag">REST APIs</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <div class="eyebrow-sm">Credentials</div>
+    <h2 class="section-title">Licenses and <span class="grad-text">certifications</span></h2>
+    <p class="section-intro">Credentials and professional focus areas supporting cloud platform and DevOps delivery.</p>
+
+    <div class="cred-grid">
+      <div class="cred-card">
+        <div class="cred-card-top"><span class="cred-verified">Professional credential</span></div>
+        <div class="cred-card-title">GitHub Actions - Certified</div>
+        <div class="cred-card-org">GitHub</div>
+        <div class="cred-card-link">GitHub Actions automation, reusable workflows, and CI/CD governance</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-card-top"><span class="cred-verified">Core focus</span></div>
+        <div class="cred-card-title">Cloud Platform Engineering</div>
+        <div class="cred-card-org">AWS · Azure · Kubernetes</div>
+        <div class="cred-card-link">Infrastructure, reliability, and delivery enablement</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="eyebrow-sm">Education</div>
+    <h2 class="section-title">Academic <span class="grad-text">foundation</span></h2>
+
+    <div class="edu-card">
+      <div class="edu-degree">Master of Business Administration (MBA)</div>
+      <div class="edu-field">Business Administration</div>
+      <div class="edu-school">Jawaharlal Nehru Technological University (JNTU)</div>
+      <div class="edu-time">2011</div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="eyebrow-sm">Let's Connect</div>
+    <h2 class="section-title">Let's build <span class="grad-text">better delivery systems.</span></h2>
+    <p class="section-intro">Open to Senior DevOps Engineer, Platform Engineer, SRE, and DevOps Lead opportunities.</p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-card-label">Email</div>
+        <a class="contact-card-action" href="mailto:visu1053@gmail.com">visu1053@gmail.com</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-label">LinkedIn</div>
+        <a class="contact-card-action" href="https://www.linkedin.com/in/n-viswanatha-reddy-38aa02105/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-label">Location</div>
+        <a class="contact-card-action" href="https://www.google.com/maps?q=Bangalore,Karnataka,India" target="_blank" rel="noopener">View on Map</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 N Viswanatha Reddy · Senior DevOps Engineer</span>
+      <span>Built in Bangalore, India</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
